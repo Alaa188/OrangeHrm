@@ -15,16 +15,11 @@ public class base {
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win32\\chromedriver.exe");
-
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
-
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-
-        // ONE shared wait for all pages
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
