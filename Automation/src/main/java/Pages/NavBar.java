@@ -70,8 +70,13 @@ public class NavBar {
         return match != null && match.isDisplayed();
     }
 
+    public void goToTopsub(String subMenu) {
+        By sub = By.xpath(String.format("//a[normalize-space(text())='%s'] | //span[normalize-space(text())='%s']", subMenu, subMenu));
+        WebElement Sub = wait.until(ExpectedConditions.visibilityOfElementLocated(sub));
+        Sub.click();
+    }
 
-    public String goToTopbar(String menuName) {
+   /* public String goToTopbar(String menuName) {
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(topbarMenuItems));
         List<WebElement> items = driver.findElements(topbarMenuItems);
         WebElement match = findMatchingElement(items, menuName);
@@ -80,25 +85,12 @@ public class NavBar {
             return driver.getCurrentUrl();
         }
         return "TopBar menu not found";
+    }*/
+
+    public void goToTopbar(String topMenu, String subMenu) {
+        By submenuXpath = By.xpath("//span[contains(text(),'"+topMenu+"')]");
+        WebElement SubmenuEl =wait.until(ExpectedConditions.elementToBeClickable(submenuXpath));
+        SubmenuEl.click();
+        goToTopsub(subMenu);
     }
-
-    public String goToTopbar(String topMenu, String subMenu) {
-        goToTopbar(topMenu);
-        By submenuXpath = By.xpath(String.format("//a[normalize-space(text())='%s'] | //span[normalize-space(text())='%s']", subMenu, subMenu));
-        try {
-            WebElement sub = wait.until(ExpectedConditions.elementToBeClickable(submenuXpath));
-            safeClick(sub);
-            return driver.getCurrentUrl();
-        } catch (Exception ignore) {
-            List<WebElement> possible = driver.findElements(By.xpath("//div[contains(@class,'dropdown') or contains(@class,'menu')]//span"));
-            WebElement match = findMatchingElement(possible, subMenu);
-            if (match != null) {
-                safeClick(match);
-                return driver.getCurrentUrl();
-            }
-        }
-        throw new RuntimeException("Topbar submenu not found: " + subMenu + " (after opening " + topMenu + ")");
-    }
-
-
 }

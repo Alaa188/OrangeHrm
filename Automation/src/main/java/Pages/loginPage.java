@@ -7,11 +7,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class loginPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
 
-    public loginPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
+    private final WebDriverWait wait;
+    public loginPage( WebDriverWait wait) {
         this.wait = wait;
     }
 

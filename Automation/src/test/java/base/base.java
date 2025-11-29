@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 import java.time.Duration;
 
 public class base {
-    public WebDriver driver;
+    public static WebDriver driver;
     protected WebDriverWait wait;
 
     @BeforeClass
@@ -20,7 +20,8 @@ public class base {
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        //driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get("http://localhost/orangehrm-5.7/web/index.php/auth/login");
     }
 
     @AfterClass
