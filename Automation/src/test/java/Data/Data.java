@@ -8,7 +8,8 @@ public class Data {
     //for local
     public static String username = "alaasaeed";
     public static String password="Alaa@1222004";
-
+    public static String myusername="adminOmar";///////o
+    public static String mypassword="omaromar11A#12";//////o
 
     public static String uniquePassword="AbCdefgh@123455";
     public static String uniqueUsername = "Ccccccccccccccccccccc";
@@ -39,5 +40,8 @@ public class Data {
     public static String getUsersURL(){
         return URL+"/admin/viewSystemUsers";
     }
+    public static String getLeaveListURL(){return URL+"/leave/viewLeaveList";}////////o
+    public static String EssGetLeaveListURL(){return URL+"/leave/viewMyLeaveList";}
+    public static String getEntitlementsURL(){return URL+"/leave/addLeaveEntitlement";}////////o
 
 }
