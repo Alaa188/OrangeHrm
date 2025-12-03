@@ -14,7 +14,7 @@ public class base {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "E:\\DEPI\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
