@@ -3,6 +3,7 @@
 <suite name="Smoke Suite">
     <test name="Smoke Tests">
 
+        
         <packages>
             <package name="Tests.Admin"/>
         </packages>
