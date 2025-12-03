@@ -11,13 +11,16 @@ public class Data {
 
 
     public static String uniquePassword="AbCdefgh@123455";
-    public static String uniqueUsername = "Ccccccccccccccccccccc";
-    public static String uniqueUsername1 = "AlaaAuto3";
+
+    public static String uniqueUsername="AlaaAuto1";
+    public static String uniqueUsernameForPim = "AlaaAuto4";
+
     public static String firstName = "Alaa";
     public static String middleName = "Saeed";
     public static String lastName = "Taha";
-    public static String employeeName = "Shaima a Saeed";
-    public static String employeeName1 = "Alaa a Saeed";
+
+    public static String employeeName = "Alaa Saeed Taha";
+    public static String employeeName1 = "Shaima a Saeed";
 
     public static String userRoleAdmin="Admin"; //Admin or Ess
     public static String userRoleEss="ESS"; //Admin or Ess

@@ -26,6 +26,9 @@ public class EmployeesPage {
     private By confirmPassField  = By.xpath("(//input[@type='password'])[2]");
     private By saveBtn           = By.cssSelector("button[type='submit']");
     private By successMSG        = By.className("oxd-text--toast-message");
+    private By EmployeeNamePath   = By.xpath("//div[contains(text(),'Shaima a')]");
+    private By EmployeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
+    private By submitBtn = By.cssSelector("button[type='submit']");
 
     public String addEmployee(String fName,String mName, String lName,String UserName, String Password,String ConfirmPasswod){
         WebElement firstName = wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameField));
@@ -62,5 +65,24 @@ public class EmployeesPage {
         } catch (Exception e) {
             return "Success message not found";
         }
+
+    }
+    public String getEmployeeInList(String Employee){
+        WebElement UsernameInList= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='row']//div[text()='"+Employee+"']")));
+        return UsernameInList.getText();
+    }
+    public String SearchForEmployee(String EmployeeName) {
+
+        // employee name input
+        WebElement empName = wait.until(ExpectedConditions.visibilityOfElementLocated(EmployeeNameField));
+        empName.sendKeys(EmployeeName);
+        // dropdown list for employee
+        WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='listbox']//span[text()='" + EmployeeName + "']")));
+        empDropItem.click();
+
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
+        submitButton.click();
+        String shortName = EmployeeName.substring(0, EmployeeName.lastIndexOf(" "));
+        return getEmployeeInList(shortName);
     }
 }

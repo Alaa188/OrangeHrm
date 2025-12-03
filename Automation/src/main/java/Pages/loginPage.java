@@ -8,9 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class loginPage {
 
-    private final WebDriverWait wait;
-    public loginPage( WebDriverWait wait) {
+    private  WebDriverWait wait;
+    private WebDriver driver;
+    public loginPage( WebDriverWait wait,WebDriver driver) {
         this.wait = wait;
+        this.driver=driver;
     }
 
     By usernameFieldLoc = By.cssSelector("[name=\"username\"]");

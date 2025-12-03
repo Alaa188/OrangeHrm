@@ -21,7 +21,7 @@ public class UsersTest extends base{
     logoutPage LogoutPage;
     @BeforeMethod
     public void TestSetup(){
-         Loginpage = new loginPage(wait);
+         Loginpage = new loginPage(wait, driver);
          navBar=new NavBar(driver);
         usersPage=new UsersPage(driver,wait);
         addEmployeePage=new EmployeesPage(driver,wait);
@@ -63,6 +63,7 @@ public class UsersTest extends base{
         navBar.goToTopbar("User Management ","Users");
         //search
         Assert.assertEquals(usersPage.SearchForUser(Data.uniqueUsername,Data.userRoleAdmin,Data.employeeName1,Data.statusE),Data.uniqueUsername);
+
         //delete
         Assert.assertEquals(usersPage.DeleteUser(), Data.deletedSuccessMSG);
         //logout
