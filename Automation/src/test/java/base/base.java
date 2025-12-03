@@ -14,19 +14,9 @@ public class base {
 
     @BeforeClass
     public void setUp() {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win32\\chromedriver.exe");
-=======
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver-win32\\chromedriver.exe");
->>>>>>> Stashed changes
-=======
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver-win32\\chromedriver.exe");
->>>>>>> Stashed changes
-=======
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver-win32\\chromedriver.exe");
->>>>>>> Stashed changes
+
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
