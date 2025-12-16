@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Smoke Suite">
-    <test name="Smoke Tests">
+<suite name="OrangeHRM Automation Suite" verbose="1">
 
-        
-        <packages>
-            <package name="Tests.Admin"/>
-        </packages>
+    <test name="PIM Tests">
+        <classes>
+            <class name="Tests.PIM.EmployeesTest"/>
+        </classes>
     </test>
+    <test name="Admin Tests">
+        <classes>
+            <class name="Tests.Admin.UsersTest"/>
+        </classes>
+    </test>
+    <test name="Time Sheet Tests">
+        <classes>
+            <class name="Tests.Time.TimeSheetTest"/>
+        </classes>
+    </test>
+    <test name="Leave Tests">
+        <classes>
+            <class name="Tests.Leave.leaveTest"/>
+        </classes>
+    </test>
+
+
 </suite>

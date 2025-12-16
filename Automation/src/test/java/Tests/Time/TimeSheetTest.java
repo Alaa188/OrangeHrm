@@ -20,7 +20,7 @@ public class TimeSheetTest extends base {
     @BeforeClass
     public void setup(){
         LogoutPage = new logoutPage(driver,wait);
-        Loginpage = new loginPage(wait);
+        Loginpage = new loginPage(wait, driver);
         navBar=new NavBar(driver);
         timeSheetPage=new TimeSheetPage(driver,wait);
 
@@ -31,10 +31,8 @@ public class TimeSheetTest extends base {
         //login
         Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
         navBar.goToSideMenu("Time");
-        Assert.assertEquals(timeSheetPage.search(Data.employeeName),"Timesheet for Shaima Saeed");
-
+        Assert.assertEquals(timeSheetPage.search(Data.employeeName1),"Timesheet for Shaima Saeed");
         timeSheetPage.EditTimeSheet();
-
         //logout
         Assert.assertEquals(LogoutPage.logout(),"Login");
     }

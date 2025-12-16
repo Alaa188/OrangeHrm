@@ -15,7 +15,7 @@ public class logoutPage {
         this.driver=driver;
     }
     private By userDropDownIconPath=By.className("oxd-userdropdown-icon");
-    private By logoutPath=By.cssSelector("a[href='/orangehrm-5.7/web/index.php/auth/logout']");
+    private By logoutPath=By.cssSelector("a[href='/web/index.php/auth/logout']");
     private By loginHeaderPath = By.tagName("h5");
     public String logout(){
         WebElement userDropDownIcon=wait.until(ExpectedConditions.elementToBeClickable(userDropDownIconPath));

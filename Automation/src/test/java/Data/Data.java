@@ -2,23 +2,25 @@ package Data;
 
 public class Data {
     //for open source
-   // public static String username = "Admin";
-   // public static String password="admin123";
+     public static String username = "Admin";
+    public static String password="admin123";
 
     //for local
-    public static String username = "alaasaeed";
-    public static String password="Alaa@1222004";
-    public static String myusername="adminOmar";///////o
-    public static String mypassword="omaromar11A#12";//////o
+    //public static String username = "alaasaeed";
+    //public static String password="Alaa@1222004";
+
 
     public static String uniquePassword="AbCdefgh@123455";
-    public static String uniqueUsername = "Ccccccccccccccccccccc";
-    public static String uniqueUsername1 = "AlaaAuto3";
+
+    public static String uniqueUsername="AlaaAuto1";
+    public static String uniqueUsernameForPim = "AlaaAuto4";
+
     public static String firstName = "Alaa";
     public static String middleName = "Saeed";
     public static String lastName = "Taha";
-    public static String employeeName = "Shaima a Saeed";
-    public static String employeeName1 = "Alaa a Saeed";
+
+    public static String employeeName = "Alaa Saeed Taha";
+    public static String employeeName1 = "Shaima a Saeed";
 
     public static String userRoleAdmin="Admin"; //Admin or Ess
     public static String userRoleEss="ESS"; //Admin or Ess
@@ -40,8 +42,7 @@ public class Data {
     public static String getUsersURL(){
         return URL+"/admin/viewSystemUsers";
     }
-    public static String getLeaveListURL(){return URL+"/leave/viewLeaveList";}////////o
+    public static String getLeaveListURL(){return URL+"/leave/viewLeaveList";}
     public static String EssGetLeaveListURL(){return URL+"/leave/viewMyLeaveList";}
-    public static String getEntitlementsURL(){return URL+"/leave/addLeaveEntitlement";}////////o
-
+    public static String getEntitlementsURL(){return URL+"/leave/addLeaveEntitlement";}
 }

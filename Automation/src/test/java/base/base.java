@@ -14,14 +14,16 @@ public class base {
 
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "E:\\DEPI\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win32\\chromedriver.exe");
+
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        //driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-        driver.get("http://localhost/orangehrm-5.7/web/index.php/auth/login");
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        //driver.get("http://localhost/orangehrm-5.7/web/index.php/auth/login");
     }
 
     @AfterClass

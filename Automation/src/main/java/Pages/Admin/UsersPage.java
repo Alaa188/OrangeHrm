@@ -38,49 +38,63 @@ public class UsersPage {
         WebElement updateBtn = wait.until(ExpectedConditions.elementToBeClickable(UpdateBtn));
         updateBtn.click();
     }
-
-    public String AddUser(String userRole, String status, String EmployeeName,String Username, String Password) {
-
-        // user role
+    public void clickSubmit(){
+        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
+        submitButton.click();
+    }
+    public void SelectUserRole(String userRole){
         WebElement roleDropdown = wait.until(ExpectedConditions.elementToBeClickable(userRoleDropdown));
         roleDropdown.click();
-
+        // user role
         By roleOption = By.xpath("//div[@role='option']//span[contains(text(), '" + userRole + "')]");
         WebElement selectRole = wait.until(ExpectedConditions.elementToBeClickable(roleOption));
         selectRole.click();
+    }
+    public void AddUserName(String Username){
 
-        // status
-        WebElement statusDropdownElement = wait.until(ExpectedConditions.elementToBeClickable(statusDropdown));
-        statusDropdownElement.click();
+        WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(UsernameField));
+        usernameField.sendKeys(Keys.CONTROL + "a");
+        usernameField.sendKeys(Keys.DELETE);
+        usernameField.sendKeys(Username);
 
-        By statusOption = By.xpath("//div[@role='option']//span[contains(text(), '" + status + "')]");
-        WebElement selectStatus = wait.until(ExpectedConditions.elementToBeClickable(statusOption));
-        selectStatus.click();
-
+    }
+    public void AddEmployee(String EmployeeName){
         // employee name input
         WebElement empName = wait.until(ExpectedConditions.visibilityOfElementLocated(EmployeeNameField));
+        empName.sendKeys(Keys.CONTROL + "a");
+        empName.sendKeys(Keys.DELETE);
         empName.sendKeys(EmployeeName);
-
         // dropdown list for employee
         WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='listbox']//span[text()='" + EmployeeName + "']")));
         empDropItem.click();
-
-        // username
-        WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(UsernameField));
-        usernameField.sendKeys(Username);
-        // password fields
+    }
+    public void AddPass(String Password){
         List<WebElement> passwordFields = wait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@type='password']"))
         );
         for (WebElement pass : passwordFields) {
             pass.sendKeys(Password);
         }
+    }
+    public void SelectStatus(String status){
+        WebElement statusDropdownElement = wait.until(ExpectedConditions.elementToBeClickable(statusDropdown));
+        statusDropdownElement.click();
 
-
-        // submit
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-        submitButton.click();
-
+        By statusOption = By.xpath("//div[@role='option']//span[contains(text(), '" + status + "')]");
+        WebElement selectStatus = wait.until(ExpectedConditions.elementToBeClickable(statusOption));
+        selectStatus.click();
+    }
+    public String getUsernameInList(String Username){
+        WebElement UsernameInList= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='row']//div[text()='"+Username+"']")));
+        return UsernameInList.getText();
+    }
+    public void DeleteAndConfirm(){
+        WebElement deleteBtn=wait.until(ExpectedConditions.elementToBeClickable(deleteBtnPath));
+        deleteBtn.click();
+        WebElement confirmDeletion=wait.until(ExpectedConditions.elementToBeClickable(confirmDeletionBtn));
+        confirmDeletion.click();
+    }
+    public String checkSuccessMsg(){
         try {
             WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(5));
             WebElement success = shortWait.until(ExpectedConditions.visibilityOfElementLocated(successMSG));
@@ -89,115 +103,40 @@ public class UsersPage {
             return "Success message not found";
         }
     }
-
-    public String getUsernameInList(String username){
-        WebElement UsernameInList= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@role='row']//div[text()='"+username+"']")));
-        return UsernameInList.getText();
+    public String AddUser(String userRole, String status, String EmployeeName,String Username, String Password) {
+        SelectUserRole(userRole);
+        SelectStatus(status);
+        AddEmployee(EmployeeName);
+        AddUserName(Username);
+        AddPass(Password);
+        clickSubmit();
+        return checkSuccessMsg();
     }
 
-    public String SearchForUser(String username,String userRole,String EmployeeName,String status) {
-        // username
-        WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(UsernameField));
-        usernameField.sendKeys(username);
-
-        // user role
-        WebElement roleDropdown = wait.until(ExpectedConditions.elementToBeClickable(userRoleDropdown));
-        roleDropdown.click();
-
-        By roleOption = By.xpath("//div[@role='option']//span[contains(text(), '"+userRole+"')]");
-        WebElement selectRole = wait.until(ExpectedConditions.elementToBeClickable(roleOption));
-        selectRole.click();
-
-        // employee name input
-        WebElement empName = wait.until(ExpectedConditions.visibilityOfElementLocated(EmployeeNameField));
-        empName.sendKeys(EmployeeName);
-        // dropdown list for employee
-        WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='listbox']//span[text()='" + EmployeeName + "']")));
-        empDropItem.click();
-
-        // status
-        WebElement statusDropdownElement = wait.until(ExpectedConditions.elementToBeClickable(statusDropdown));
-        statusDropdownElement.click();
-
-        By statusOption = By.xpath("//div[@role='option']//span[contains(text(), '" + status + "')]");
-        WebElement selectStatus = wait.until(ExpectedConditions.elementToBeClickable(statusOption));
-        selectStatus.click();
-
-        // submit
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-        submitButton.click();
-
-
-        return getUsernameInList(username);
+    public String SearchForUser(String Username,String userRole,String EmployeeName,String status) {
+        AddUserName(Username);
+        SelectUserRole(userRole);
+        SelectStatus(status);
+        AddEmployee(EmployeeName);
+        clickSubmit();
+        return getUsernameInList(Username);
     }
+
 
     public String EditUser(String userRole, String status, String EmployeeName,
                            String Username,boolean changePass, String Password) throws InterruptedException {
-        // user role
-        WebElement roleDropdown = wait.until(ExpectedConditions.elementToBeClickable(userRoleDropdown));
-        roleDropdown.click();
 
-        By roleOption = By.xpath("//div[@role='option']//span[contains(text(), '" + userRole + "')]");
-        WebElement selectRole = wait.until(ExpectedConditions.elementToBeClickable(roleOption));
-        selectRole.click();
-
-        // status
-        WebElement statusDropdownElement = wait.until(ExpectedConditions.elementToBeClickable(statusDropdown));
-        statusDropdownElement.click();
-
-        By statusOption = By.xpath("//div[@role='option']//span[contains(text(), '" + status + "')]");
-        WebElement selectStatus = wait.until(ExpectedConditions.elementToBeClickable(statusOption));
-        selectStatus.click();
-
-        // employee name input
-        WebElement empName = wait.until(ExpectedConditions.visibilityOfElementLocated(EmployeeNameField));
-        empName.sendKeys(Keys.CONTROL + "a");
-        empName.sendKeys(Keys.DELETE);
-        empName.sendKeys(EmployeeName);
-
-        // dropdown list for employee
-        WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(   "//div[@role='listbox']//div[normalize-space()='" + EmployeeName + "']")));
-        empDropItem.click();
-
-        // username
-        WebElement usernameField = wait.until(ExpectedConditions.visibilityOfElementLocated(UsernameField));
-        usernameField.sendKeys(Keys.CONTROL + "a");
-        usernameField.sendKeys(Keys.DELETE);
-        usernameField.sendKeys(Username);
-
+        SelectUserRole(userRole);
+        SelectStatus(status);
+        AddEmployee(EmployeeName);
+        AddUserName(Username);
         if(changePass){
-            // password fields
-            List<WebElement> passwordFields = wait.until(
-                    ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//input[@type='password']"))
-            );
-
-            for (WebElement pass : passwordFields) {
-                pass.sendKeys(Password);
-            }
+            AddPass(Password);
         }
-
-        // submit
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
-        submitButton.click();
-
-        try {
-            WebElement success = wait.until(ExpectedConditions.visibilityOfElementLocated(successMSG));
-            return success.getText();
-        } catch (Exception e) {
-            return "Success message not found";
-        }
+        clickSubmit();
+        return checkSuccessMsg();
     }
     public String DeleteUser(){
-        WebElement deleteBtn=wait.until(ExpectedConditions.elementToBeClickable(deleteBtnPath));
-        deleteBtn.click();
-        WebElement confirmDeletion=wait.until(ExpectedConditions.elementToBeClickable(confirmDeletionBtn));
-        confirmDeletion.click();
-        try {
-            WebElement success = wait.until(ExpectedConditions.visibilityOfElementLocated(successMSG));
-            return success.getText();
-        } catch (Exception e) {
-            return "Success message not found";
-        }
-
-    }
+        DeleteAndConfirm();
+        return checkSuccessMsg();}
 }
