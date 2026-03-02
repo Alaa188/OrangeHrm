@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf32bc19-95f1-4187-b274-42e2b4cf468d" name="Changes" comment="" />
+    <list default="true" id="cf32bc19-95f1-4187-b274-42e2b4cf468d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Admin/UsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Admin/UsersTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,21 +15,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Alaa188"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Alaa188&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Alaa188/OrangeHrm.git",
-    "accountId": "86110f62-502a-4521-b027-9c2291699783"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Alaa188/OrangeHrm.git&quot;,
+    &quot;accountId&quot;: &quot;86110f62-502a-4521-b027-9c2291699783&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="3AO8v4fzSEhakEWh2bmBocx2Uoa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -39,6 +41,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.UsersTest.executor": "Run",
     "com.codeium.enabled": "true",
+    "git-widget-placeholder": "Alaa",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation"
@@ -78,5 +81,8 @@
       <updated>1772452486457</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>
