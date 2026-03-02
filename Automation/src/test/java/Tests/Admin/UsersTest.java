@@ -8,10 +8,12 @@ import Pages.logoutPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import base.base;
 import Data.Data;
 
+@Listeners({io.qameta.allure.testng.AllureTestNg.class})
 public class UsersTest extends base{
 
     loginPage Loginpage;

@@ -2,12 +2,12 @@ package Data;
 
 public class Data {
     //for open source
-   // public static String username = "Admin";
-   // public static String password="admin123";
+     public static String username = "Admin";
+    public static String password="admin123";
 
     //for local
-    public static String username = "alaasaeed";
-    public static String password="Alaa@1222004";
+    //public static String username = "alaasaeed";
+    //public static String password="Alaa@1222004";
 
 
     public static String uniquePassword="AbCdefgh@123455";
@@ -42,5 +42,7 @@ public class Data {
     public static String getUsersURL(){
         return URL+"/admin/viewSystemUsers";
     }
-
+    public static String getLeaveListURL(){return URL+"/leave/viewLeaveList";}
+    public static String EssGetLeaveListURL(){return URL+"/leave/viewMyLeaveList";}
+    public static String getEntitlementsURL(){return URL+"/leave/addLeaveEntitlement";}
 }

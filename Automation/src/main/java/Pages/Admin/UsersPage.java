@@ -64,8 +64,6 @@ public class UsersPage {
         empName.sendKeys(Keys.CONTROL + "a");
         empName.sendKeys(Keys.DELETE);
         empName.sendKeys(EmployeeName);
-
-
         // dropdown list for employee
         WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='listbox']//span[text()='" + EmployeeName + "']")));
         empDropItem.click();

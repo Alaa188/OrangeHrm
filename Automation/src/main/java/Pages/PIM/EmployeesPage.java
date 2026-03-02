@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class EmployeesPage {
+public class EmployeesPage  {
     private final WebDriver driver;
     private final WebDriverWait wait;
 
@@ -29,6 +29,7 @@ public class EmployeesPage {
     private By EmployeeNamePath   = By.xpath("//div[contains(text(),'Shaima a')]");
     private By EmployeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
     private By submitBtn = By.cssSelector("button[type='submit']");
+
 
     public String addEmployee(String fName,String mName, String lName,String UserName, String Password,String ConfirmPasswod){
         WebElement firstName = wait.until(ExpectedConditions.visibilityOfElementLocated(firstNameField));

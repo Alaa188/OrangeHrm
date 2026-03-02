@@ -31,7 +31,7 @@ public class TimeSheetTest extends base {
         //login
         Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
         navBar.goToSideMenu("Time");
-        Assert.assertEquals(timeSheetPage.search(Data.employeeName),"Timesheet for Alaa Taha");
+        Assert.assertEquals(timeSheetPage.search(Data.employeeName1),"Timesheet for Shaima Saeed");
         timeSheetPage.EditTimeSheet();
         //logout
         Assert.assertEquals(LogoutPage.logout(),"Login");
