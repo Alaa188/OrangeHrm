@@ -54,27 +54,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml.executor": "Run",
-    "TestNG.EmployeesTest.EmployeeCreation.executor": "Run",
-    "TestNG.EmployeesTest.executor": "Run",
-    "TestNG.TimeSheetTest.Employee_TimeSheet.executor": "Run",
-    "TestNG.TimeSheetTest.executor": "Run",
-    "TestNG.UsersTest.DeleteUser.executor": "Run",
-    "TestNG.UsersTest.UserCreation.executor": "Run",
-    "TestNG.UsersTest.executor": "Run",
-    "TestNG.leaveTest.add_Entitlement_To_Single_Employee.executor": "Run",
-    "TestNG.leaveTest.executor": "Run",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "Alaa",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.EmployeesTest.EmployeeCreation.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.EmployeesTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TimeSheetTest.Employee_TimeSheet.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.TimeSheetTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UsersTest.DeleteUser.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UsersTest.UserCreation.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.UsersTest.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.leaveTest.add_Entitlement_To_Single_Employee.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.leaveTest.executor&quot;: &quot;Run&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Alaa&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="TestNG.C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml">
     <configuration name="C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SUS-UI-testing" />
