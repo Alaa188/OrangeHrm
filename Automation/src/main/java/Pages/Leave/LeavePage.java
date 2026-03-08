@@ -31,7 +31,7 @@ public class LeavePage {
     }
 
 
-    public String selectEmployee(String username)
+    public String selectEmployee(String employeeName)
     {
         List<WebElement> radioBtns = wait.until(
                 ExpectedConditions.visibilityOfAllElementsLocatedBy(radioButtons)
@@ -39,7 +39,7 @@ public class LeavePage {
         radioBtns.get(0).click();
         WebElement empTextbox = wait.until(ExpectedConditions.elementToBeClickable(empTextBoxPath));
         empTextbox.clear();
-        empTextbox.sendKeys(username);
+        empTextbox.sendKeys(employeeName);
         WebElement dropdown = wait.until(
                 ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".oxd-autocomplete-dropdown"))
         );
@@ -118,15 +118,19 @@ public class LeavePage {
     }
     public void selectLeaveTypeMultiple()
     {
-        WebElement firstOption;
-        List<WebElement> comboBtns =  wait.until(
-                ExpectedConditions.visibilityOfAllElementsLocatedBy(comboButtons)
-        );
-        for(int i =0;i<3;i++)
+        for(int i = 0; i < 3; i++)
         {
+            List<WebElement> comboBtns = wait.until(
+                    ExpectedConditions.visibilityOfAllElementsLocatedBy(comboButtons)
+            );
+
             comboBtns.get(i).click();
-            firstOption = wait.until(driver -> {
-                List<WebElement> options = driver.findElements(By.cssSelector("div.oxd-select-dropdown[role='listbox'] div[role='option']"));
+
+            WebElement firstOption = wait.until(driver -> {
+                List<WebElement> options = driver.findElements(
+                        By.cssSelector("div.oxd-select-dropdown[role='listbox'] div[role='option']")
+                );
+
                 for (WebElement option : options) {
                     String text = option.getText().trim();
                     if (!text.isEmpty() && !text.equalsIgnoreCase("-- Select --")) {
@@ -135,6 +139,7 @@ public class LeavePage {
                 }
                 return null;
             });
+
             firstOption.click();
         }
     }

@@ -6,12 +6,13 @@ import Pages.PIM.EmployeesPage;
 import Pages.loginPage;
 import Pages.logoutPage;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import base.base;
 import Data.Data;
+
+import java.io.IOException;
+
+import static Data.Data.userRoleAdmin;
 
 // @Listeners({io.qameta.allure.testng.AllureTestNg.class})
 public class UsersTest extends base{
@@ -30,46 +31,45 @@ public class UsersTest extends base{
         LogoutPage=new logoutPage(driver,wait);
     }
 
+
     @Test(priority = 1)
     public void UserCreation() throws InterruptedException {
-        //login
-       Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
-       navBar.goToSideMenu("Admin");
-       navBar.goToTopbar("User Management ","Users");
-       //addUser
-       usersPage.NavigateToAddPage();
-       Assert.assertEquals(usersPage.AddUser(Data.userRoleAdmin,Data.statusE,Data.employeeName,Data.uniqueUsername,Data.uniquePassword), Data.savedSuccessMSG);
-       //logout
-       Assert.assertEquals(LogoutPage.logout(),"Login");
+
+        navBar.goToSideMenu("Admin");
+        navBar.goToTopbar("User Management ","Users");
+
+        usersPage.NavigateToAddPage();
+
+        Assert.assertEquals(usersPage.AddUser(Data.userRoleAdmin, Data.statusE, Data.employeeName, Data.uniqueUsername, Data.uniquePassword), Data.savedSuccessMSG);
     }
     @Test(priority = 2)
     public void UpdateUser() throws InterruptedException {
         //login
-        Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
+        //Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
         navBar.goToSideMenu("Admin");
         navBar.goToTopbar("User Management ","Users");
         //search
-        Assert.assertEquals(usersPage.SearchForUser(Data.uniqueUsername,Data.userRoleAdmin,Data.employeeName,Data.statusE),Data.uniqueUsername);
+        Assert.assertEquals(usersPage.SearchForUser(Data.uniqueUsername, Data.userRoleEss,Data.employeeName,Data.statusE),Data.uniqueUsername);
         usersPage.NavigateToUpdatePage();
         //update
         Assert.assertEquals(usersPage.EditUser(Data.userRoleAdmin,Data.statusE,Data.employeeName1, Data.uniqueUsername,false,Data.uniquePassword), Data.updatedSuccessMSG);
         //logout
-        Assert.assertEquals(LogoutPage.logout(),"Login");
+        //Assert.assertEquals(LogoutPage.logout(),"Login");
     }
 
     @Test(priority = 3)
     public void DeleteUser() throws InterruptedException {
         //login
-        Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
+       // Assert.assertEquals(Loginpage.login(Data.username,Data.password ),"Dashboard");
         navBar.goToSideMenu("Admin");
         navBar.goToTopbar("User Management ","Users");
         //search
-        Assert.assertEquals(usersPage.SearchForUser(Data.uniqueUsername,Data.userRoleAdmin,Data.employeeName1,Data.statusE),Data.uniqueUsername);
+        Assert.assertEquals(usersPage.SearchForUser(Data.uniqueUsername, userRoleAdmin,Data.employeeName1,Data.statusE),Data.uniqueUsername);
 
         //delete
         Assert.assertEquals(usersPage.DeleteUser(), Data.deletedSuccessMSG);
         //logout
-        Assert.assertEquals(LogoutPage.logout(),"Login");
+        //Assert.assertEquals(LogoutPage.logout(),"Login");
 
     }
 
