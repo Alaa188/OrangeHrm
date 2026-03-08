@@ -26,7 +26,6 @@ public class EmployeesPage  {
     private By confirmPassField  = By.xpath("(//input[@type='password'])[2]");
     private By saveBtn           = By.cssSelector("button[type='submit']");
     private By successMSG        = By.className("oxd-text--toast-message");
-    private By EmployeeNamePath   = By.xpath("//div[contains(text(),'Shaima a')]");
     private By EmployeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
     private By submitBtn = By.cssSelector("button[type='submit']");
 

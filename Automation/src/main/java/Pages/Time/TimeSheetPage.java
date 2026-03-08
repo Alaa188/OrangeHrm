@@ -16,22 +16,24 @@ public class TimeSheetPage {
 
     }
     private By EmployeeNameField = By.cssSelector("input[placeholder=\"Type for hints...\"]");
-    private By ViewButt = By.className("oxd-button--medium");
+    //private By ViewButt = By.className("`oxd-button--medium`");
     private By validateName = By.className("orangehrm-main-title");
     private By EditTimeSheet = By.className("oxd-button--ghost");
     private By Projectname = By.cssSelector("input[placeholder=\"Type for hints...\"]");
     private By Activity = By.className("oxd-select-text-input");
 
+    private By ViewButt = By.cssSelector("button.oxd-button--medium");
+
     public String search(String EmployeeName){
-        // employee name input
+
         WebElement empName = wait.until(ExpectedConditions.visibilityOfElementLocated(EmployeeNameField));
         empName.sendKeys(EmployeeName);
 
-        // dropdown list for employee
-        WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@role='listbox']//span[text()='" + EmployeeName + "']")));
+        WebElement empDropItem = wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[@role='listbox']//span[text()='" + EmployeeName + "']")));
         empDropItem.click();
 
-        WebElement ViewTimeSheet = driver.findElement(ViewButt);
+        WebElement ViewTimeSheet = wait.until(ExpectedConditions.elementToBeClickable(ViewButt));
         ViewTimeSheet.click();
 
         WebElement validate = wait.until(ExpectedConditions.visibilityOfElementLocated(validateName));
@@ -40,6 +42,13 @@ public class TimeSheetPage {
     }
 
     public void EditTimeSheet(){
+        WebElement create = wait.until(
+                ExpectedConditions.elementToBeClickable(
+                        By.xpath("//button[normalize-space()='Create Timesheet']")
+                ));
+
+        create.click();
+
         WebElement EditTime = wait.until(ExpectedConditions.elementToBeClickable(EditTimeSheet));
         EditTime.click();
 

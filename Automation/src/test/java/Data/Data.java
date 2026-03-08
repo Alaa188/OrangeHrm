@@ -3,7 +3,7 @@ package Data;
 public class Data {
     //for open source
      public static String username = "Admin";
-    public static String password="admin123";
+    public static String password="1222004@Alaa";
 
     //for local
     //public static String username = "alaasaeed";
@@ -20,7 +20,7 @@ public class Data {
     public static String lastName = "Taha";
 
     public static String employeeName = "Alaa Saeed Taha";
-    public static String employeeName1 = "Shaima a Saeed";
+    public static String employeeName1 = "Shaima a Taha";
 
     public static String userRoleAdmin="Admin"; //Admin or Ess
     public static String userRoleEss="ESS"; //Admin or Ess
@@ -43,6 +43,6 @@ public class Data {
         return URL+"/admin/viewSystemUsers";
     }
     public static String getLeaveListURL(){return URL+"/leave/viewLeaveList";}
-    public static String EssGetLeaveListURL(){return URL+"/leave/viewMyLeaveList";}
+    public static String EssGetLeaveListURL(){return URL+"/leave/viewLeaveList";}
     public static String getEntitlementsURL(){return URL+"/leave/addLeaveEntitlement";}
 }
