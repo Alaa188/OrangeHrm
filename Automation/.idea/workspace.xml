@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf32bc19-95f1-4187-b274-42e2b4cf468d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Data/ExcelReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3- Test Plans/Automation Test Plan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../3- Test Plans/Automation Test Plan.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../3- Test Plans/Test Plan_V2.0.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../3- Test Plans/Test Plan_V2.0.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5- Bug Report/APIs Bugs.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../5- Bug Report/OrangeHRM_Bug.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../6- APIs Test Cases/APIs Test Cases.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/Leave/LeavePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/Leave/LeavePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/PIM/EmployeesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/PIM/EmployeesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/Time/TimeSheetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/Time/TimeSheetPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/logoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/logoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Data/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Admin/UsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Admin/UsersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Leave/LeaveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Leave/LeaveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/PIM/EmployeesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/PIM/EmployeesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Time/TimeSheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Time/TimeSheetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/base.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
