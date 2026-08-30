@@ -1,5 +1,6 @@
 package Pages.PIM;
 
+import Pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,15 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class EmployeesPage  {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
+public class EmployeesPage extends BasePage {
 
-    public EmployeesPage(WebDriver driver, WebDriverWait wait){
-        this.driver = driver;
-        this.wait = wait;
+    public EmployeesPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
     }
-
     private By firstNameField    = By.name("firstName");
     private By middleNameField   = By.name("middleName");
     private By lastNameField     = By.name("lastName");
@@ -28,6 +25,8 @@ public class EmployeesPage  {
     private By successMSG        = By.className("oxd-text--toast-message");
     private By EmployeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
     private By submitBtn = By.cssSelector("button[type='submit']");
+
+
 
 
     public String addEmployee(String fName,String mName, String lName,String UserName, String Password,String ConfirmPasswod){

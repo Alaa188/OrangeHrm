@@ -1,5 +1,6 @@
 package Pages.Admin;
 
+import Pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -10,16 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class UsersPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
-
+public class UsersPage extends BasePage {
     public UsersPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
+        super(driver,wait);
     }
-
-
     private By userRoleDropdown = By.xpath("(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[1]");
     private By statusDropdown = By.xpath("(//i[@class='oxd-icon bi-caret-down-fill oxd-select-text--arrow'])[2]");
     private By UsernameField = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
@@ -113,11 +108,9 @@ public class UsersPage {
         return checkSuccessMsg();
     }
 
-    public String SearchForUser(String Username,String userRole,String EmployeeName,String status) {
+    public String SearchForUser(String Username,String userRole) {
         AddUserName(Username);
         SelectUserRole(userRole);
-        SelectStatus(status);
-        AddEmployee(EmployeeName);
         clickSubmit();
         return getUsernameInList(Username);
     }

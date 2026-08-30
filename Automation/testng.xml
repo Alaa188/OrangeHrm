@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="OrangeHRM Automation Suite" verbose="1">
-
-    <test name="PIM Tests">
-        <classes>
-            <class name="Tests.PIM.EmployeesTest"/>
-        </classes>
-    </test>
     <test name="Admin Tests">
         <classes>
             <class name="Tests.Admin.UsersTest"/>
         </classes>
     </test>
+    <test name="PIM Tests">
+        <classes>
+            <class name="Tests.PIM.EmployeesTest"/>
+        </classes>
+    </test>
+
     <test name="Time Sheet Tests">
         <classes>
             <class name="Tests.Time.TimeSheetTest"/>

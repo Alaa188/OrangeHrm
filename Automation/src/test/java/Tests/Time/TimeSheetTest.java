@@ -1,39 +1,34 @@
 package Tests.Time;
 
-import Data.Data;
 import Pages.NavBar;
 import Pages.Time.TimeSheetPage;
-import Pages.loginPage;
-
-import Pages.logoutPage;
 import base.base;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+import Data.Data;
+@Listeners({io.qameta.allure.testng.AllureTestNg.class})
 public class TimeSheetTest extends base {
-    loginPage Loginpage;
+
     NavBar navBar;
     TimeSheetPage timeSheetPage;
-    logoutPage LogoutPage;
 
     @BeforeClass
-    public void setup(){
-        LogoutPage = new logoutPage(driver,wait);
-        Loginpage = new loginPage(wait, driver);
-        navBar=new NavBar(driver);
-        timeSheetPage=new TimeSheetPage(driver,wait);
-
-
+    public void setup() {
+        navBar = new NavBar(driver);
+        timeSheetPage = new TimeSheetPage(driver, wait);
     }
+
     @Test
-    public void Employee_TimeSheet(){
+    public void Employee_TimeSheet() {
         navBar.goToSideMenu("Time");
-        Assert.assertEquals(timeSheetPage.search(Data.employeeName1),"Timesheet for Shaima Taha");
+
+        Assert.assertEquals(
+                timeSheetPage.search(Data.employeeName1),
+                "Timesheet for Shaima Taha"
+        );
+
         timeSheetPage.EditTimeSheet();
     }
-
-
 }
-
-
