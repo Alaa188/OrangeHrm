@@ -11,12 +11,23 @@
   <version>1.0-SNAPSHOT</version>
 
   <properties>
-
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <allure.version>2.35.3</allure.version>
+    <aspectj.version>1.9.25</aspectj.version>
+      <maven.compiler.source>21</maven.compiler.source>
+      <maven.compiler.target>21</maven.compiler.target>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-bom</artifactId>
+        <version>${allure.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>org.testng</groupId>
@@ -37,7 +48,7 @@
     <dependency>
       <groupId>io.qameta.allure</groupId>
       <artifactId>allure-testng</artifactId>
-      <version>2.25.0</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -60,8 +71,11 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.11.0</version>
         <configuration>
-          <source>8</source>
-          <target>8</target><compilerArgs>--enable-preview</compilerArgs>
+          <source>21</source>
+          <target>21</target>
+          <compilerArgs>
+            --enable-preview
+          </compilerArgs>
         </configuration>
       </plugin>
     </plugins>
