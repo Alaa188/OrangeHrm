@@ -18,24 +18,37 @@ public class base {
     loginPage Loginpage;
     logoutPage LogoutPage;
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
 
-        //System.setProperty("webdriver.chrome.driver", "C:\\chromedriver-win64\\chromedriver.exe");
+        System.out.println("1 - Starting setup");
+
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
-        driver = new ChromeDriver(options);
-        //driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.get("http://localhost/orangehrm-5.7/web/index.php/auth/login");
-        LogoutPage = new logoutPage(driver,wait);
-        Loginpage = new loginPage(wait, driver);
-        Loginpage.login(Data.username,Data.password );
 
-        //driver.get("http://localhost/orangehrm-5.7/web/index.php/auth/login");
+        System.out.println("2 - Creating ChromeDriver");
+        driver = new ChromeDriver(options);
+
+        System.out.println("3 - ChromeDriver created");
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        System.out.println("4 - Opening URL");
+        driver.get("http://localhost/orangehrm-5.7/web/index.php/auth/login");
+
+        System.out.println("5 - URL opened");
+
+        LogoutPage = new logoutPage(driver, wait);
+        Loginpage = new loginPage(driver, wait);
+
+        System.out.println("6 - Page objects created");
+
+        Loginpage.login(Data.username, Data.password);
+
+        System.out.println("7 - Login completed");
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
 
         LogoutPage=new logoutPage(driver,wait);

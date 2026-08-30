@@ -1,19 +1,15 @@
 package Pages.Time;
 
+import Pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class TimeSheetPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
-
+public class TimeSheetPage extends BasePage {
     public TimeSheetPage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
-
+        super(driver, wait);
     }
     private By EmployeeNameField = By.cssSelector("input[placeholder=\"Type for hints...\"]");
     //private By ViewButt = By.className("`oxd-button--medium`");
@@ -23,6 +19,8 @@ public class TimeSheetPage {
     private By Activity = By.className("oxd-select-text-input");
 
     private By ViewButt = By.cssSelector("button.oxd-button--medium");
+
+
 
     public String search(String EmployeeName){
 

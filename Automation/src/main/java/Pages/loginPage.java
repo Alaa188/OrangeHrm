@@ -6,19 +6,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class loginPage {
+public class loginPage extends BasePage {
 
-    private  WebDriverWait wait;
-    private WebDriver driver;
-    public loginPage( WebDriverWait wait,WebDriver driver) {
-        this.wait = wait;
-        this.driver=driver;
+    public loginPage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
     }
 
     By usernameFieldLoc = By.cssSelector("[name=\"username\"]");
     By passwordFieldLoc = By.cssSelector("[name=\"password\"]");
     By submitButtonLoc = By.cssSelector("button[type=\"submit\"]");
     By dashboardLoc = By.cssSelector(".oxd-topbar-header-breadcrumb-module");
+
+
 
     public String getDashboard() {
         WebElement dashboardOn = wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardLoc));

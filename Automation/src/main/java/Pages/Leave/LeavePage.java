@@ -1,5 +1,6 @@
 package Pages.Leave;
 
+import Pages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -9,14 +10,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.sql.Driver;
 import java.time.Duration;
+import java.util.Base64;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class LeavePage {
+public class LeavePage extends BasePage {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-
+    public LeavePage(WebDriver driver, WebDriverWait wait) {
+        super(driver, wait);
+    }
     private By radioButtons = By.cssSelector(".oxd-radio-input");
     private By comboButtons = By.className("oxd-select-text--arrow");
     private By empTextBoxPath = By.cssSelector("input[placeholder='Type for hints...']");
@@ -25,10 +27,7 @@ public class LeavePage {
     private By saveBtnPath=By.className("-button--secondary");
     private By datePickerPath=By.className("bi-calendar");
 
-    public LeavePage(WebDriver driver, WebDriverWait wait) {
-        this.driver = driver;
-        this.wait = wait;
-    }
+
 
 
     public String selectEmployee(String employeeName)
