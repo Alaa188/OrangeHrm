@@ -19,7 +19,7 @@
     </test>
     <test name="Leave Tests">
         <classes>
-            <class name="Tests.Leave.leaveTest"/>
+             <class name="Tests.Leave.LeaveTest"/>
         </classes>
     </test>
     <listeners>

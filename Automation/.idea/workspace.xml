@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf32bc19-95f1-4187-b274-42e2b4cf468d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../3- Test Plans/Automation Test Plan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../3- Test Plans/Automation Test Plan.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3- Test Plans/Test Plan_V2.0.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../3- Test Plans/Test Plan_V2.0.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5- Bug Report/APIs Bugs.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../5- Bug Report/OrangeHRM_Bug.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../6- APIs Test Cases/APIs Test Cases.xlsx" beforeDir="false" />
+    <list default="true" id="cf32bc19-95f1-4187-b274-42e2b4cf468d" name="Changes" comment="changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/Admin/UsersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/Admin/UsersPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/Leave/LeavePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/Leave/LeavePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/PIM/EmployeesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/PIM/EmployeesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/Time/TimeSheetPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/Time/TimeSheetPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/loginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/loginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Admin/UsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Admin/UsersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Leave/LeaveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Leave/LeaveTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/PIM/EmployeesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/PIM/EmployeesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Tests/Time/TimeSheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Tests/Time/TimeSheetTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/base.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/base/base.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +65,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml">
+  <component name="RunManager" selected="TestNG.EmployeesTest">
     <configuration name="C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SUS-UI-testing" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
@@ -162,9 +147,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.EmployeesTest" />
         <item itemvalue="TestNG.C:/Users/HP/Downloads/OrangeHrmProject/OrangeHrm/OrangeHrm/Automation/testng.xml" />
         <item itemvalue="TestNG.UsersTest" />
-        <item itemvalue="TestNG.EmployeesTest" />
         <item itemvalue="TestNG.leaveTest" />
         <item itemvalue="TestNG.leaveTest.Add_Multiple" />
       </list>
@@ -179,6 +164,23 @@
       <option name="presentableId" value="Default" />
       <updated>1772452486457</updated>
     </task>
+    <task id="LOCAL-00001" summary="changes">
+      <option name="closed" value="true" />
+      <created>1788113848094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1788113848094</updated>
+    </task>
+    <task id="LOCAL-00002" summary="changes">
+      <option name="closed" value="true" />
+      <created>1788113977657</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1788113977657</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,6 +195,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
 </project>
