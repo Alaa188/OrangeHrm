@@ -40,20 +40,32 @@ public class TimeSheetPage extends BasePage {
     }
 
     public void EditTimeSheet(){
+
+        System.out.println("Current URL: " + driver.getCurrentUrl());
+        System.out.println("Current Title: " + driver.getTitle());
+
+        By createTimesheet = By.xpath("//button[normalize-space()='Create Timesheet']");
+
+        System.out.println("Create Timesheet count: " +
+                driver.findElements(createTimesheet).size());
+
         WebElement create = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        By.xpath("//button[normalize-space()='Create Timesheet']")
-                ));
+                ExpectedConditions.elementToBeClickable(createTimesheet)
+        );
 
         create.click();
 
-        WebElement EditTime = wait.until(ExpectedConditions.elementToBeClickable(EditTimeSheet));
+        WebElement EditTime = wait.until(
+                ExpectedConditions.elementToBeClickable(EditTimeSheet)
+        );
+
         EditTime.click();
 
-        WebElement ProjectName = wait.until(ExpectedConditions.visibilityOfElementLocated(Projectname));
+        WebElement ProjectName = wait.until(
+                ExpectedConditions.visibilityOfElementLocated(Projectname)
+        );
+
         ProjectName.sendKeys("lak - hrm");
-
-
     }
 
 
