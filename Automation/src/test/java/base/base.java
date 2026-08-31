@@ -25,6 +25,8 @@ public class base {
 
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
+        options.addArguments("--headless=new");
+        options.addArguments("--window-size=1920,1080");
 
         System.out.println("2 - Creating ChromeDriver");
         driver = new ChromeDriver(options);
