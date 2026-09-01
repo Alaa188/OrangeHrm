@@ -4,14 +4,15 @@ import Data.Data;
 import Pages.Admin.UsersPage;
 import Pages.NavBar;
 import base.base;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import static Data.Data.userRoleAdmin;
-
-@Listeners({io.qameta.allure.testng.AllureTestNg.class})
 public class UsersTest extends base {
 
     NavBar navBar;
@@ -23,6 +24,10 @@ public class UsersTest extends base {
         usersPage = new UsersPage(driver, wait);
     }
 
+    @Epic("OrangeHRM")
+    @Feature("Admin - User Management")
+    @Story("Create User")
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void UserCreation() throws InterruptedException {
 
@@ -43,6 +48,10 @@ public class UsersTest extends base {
         );
     }
 
+    @Epic("OrangeHRM")
+    @Feature("Admin - User Management")
+    @Story("Update User")
+    @Severity(SeverityLevel.NORMAL)
     @Test(priority = 2)
     public void UpdateUser() throws InterruptedException {
 
@@ -56,7 +65,9 @@ public class UsersTest extends base {
                 ),
                 Data.uniqueUsername
         );
+
         usersPage.NavigateToUpdatePage();
+
         Assert.assertEquals(
                 usersPage.EditUser(
                         Data.userRoleAdmin,
@@ -70,11 +81,16 @@ public class UsersTest extends base {
         );
     }
 
+    @Epic("OrangeHRM")
+    @Feature("Admin - User Management")
+    @Story("Delete User")
+    @Severity(SeverityLevel.NORMAL)
     @Test(priority = 3)
     public void DeleteUser() throws InterruptedException {
 
         navBar.goToSideMenu("Admin");
         navBar.goToTopbar("User Management ", "Users");
+
         Assert.assertEquals(
                 usersPage.SearchForUser(
                         Data.uniqueUsername,
@@ -84,7 +100,7 @@ public class UsersTest extends base {
         );
 
         Assert.assertEquals(
-                usersPage.DeleteUser(),
+                usersPage.DeleteUser(Data.uniqueUsername),
                 Data.deletedSuccessMSG
         );
     }

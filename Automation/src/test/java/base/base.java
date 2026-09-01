@@ -7,14 +7,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.time.Duration;
 
 public class base {
+
     public static WebDriver driver;
     protected WebDriverWait wait;
+
     loginPage Loginpage;
     logoutPage LogoutPage;
 
@@ -25,7 +26,7 @@ public class base {
 
         ChromeOptions options = new ChromeOptions();
         options.setAcceptInsecureCerts(true);
-        options.addArguments("--headless=new");
+       // options.addArguments("--headless=new");
         options.addArguments("--window-size=1920,1080");
 
         System.out.println("2 - Creating ChromeDriver");
@@ -53,9 +54,8 @@ public class base {
     @AfterSuite
     public void tearDown() {
 
-        LogoutPage=new logoutPage(driver,wait);
-        LogoutPage.logout();
         if (driver != null) {
+            LogoutPage.logout();
             driver.quit();
         }
     }
